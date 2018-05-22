@@ -1,0 +1,23 @@
+<h1> <%=@task.title %></h1>
+
+<div>
+  <%=link_to "Edit this task", " #{@task.id}/edit" %>
+</div>
+
+
+<div>
+ <p><%=@task.details %></p>
+</div>
+<div>
+  <%=check_box_tag @task.title, @task.title, @task.completed %>
+  <%if @task.completed == true %>
+  <%= "This task is completed"%>
+  <%elsif %>
+  <%= "This task isn't compteted yet"%>
+  <% end %>
+</div>
+
+
+<div>
+  <%=link_to "back to list", tasks_path %>
+</div>
